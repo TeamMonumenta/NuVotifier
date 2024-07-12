@@ -78,7 +78,7 @@ public class Vote {
                 vote.getAdditionalData() == null ? null : vote.getAdditionalData().clone());
     }
 
-    private static String getTimestamp(JsonElement object) {
+    private static String timestampFromJson(JsonElement object) {
         try {
             return Long.toString(object.getAsLong());
         } catch (Exception e) {
@@ -90,7 +90,7 @@ public class Vote {
         this(jsonObject.get("serviceName").getAsString(),
                 jsonObject.get("username").getAsString(),
                 jsonObject.get("address").getAsString(),
-                getTimestamp(jsonObject.get("timestamp")));
+                timestampFromJson(jsonObject.get("timestamp")));
         if (jsonObject.has("additionalData"))
             additionalData = Base64.getDecoder().decode(jsonObject.get("additionalData").getAsString());
     }

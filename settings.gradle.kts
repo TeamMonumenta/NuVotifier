@@ -1,0 +1,22 @@
+rootProject.name = "nuvotifier"
+
+include("api")
+findProject(":api")?.name = "nuvotifier-api"
+
+include("common")
+findProject(":common")?.name = "nuvotifier-common"
+
+include("bukkit")
+findProject(":bukkit")?.name = "nuvotifier-bukkit"
+
+include("bungeecord")
+findProject(":bungeecord")?.name = "nuvotifier-bungeecord"
+
+include("sponge")
+findProject(":sponge")?.name = "nuvotifier-sponge"
+
+include("universal")
+findProject(":universal")?.name = "nuvotifier-universal"
+
+include("velocity")
+findProject(":velocity")?.name = "nuvotifier-velocity"
